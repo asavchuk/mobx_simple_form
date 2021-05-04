@@ -9,7 +9,7 @@ import '../mobx/form_store.dart';
 class Welcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final store = Provider.of<FormStore>(context);
+    final store = Provider.of<FormStore>(context, listen: false);
     return Scaffold(
       appBar: AppBar(
         title: Text('Mobx example'),
