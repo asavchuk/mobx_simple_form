@@ -4,14 +4,33 @@ import 'package:provider/provider.dart';
 
 import '../mobx/form_store.dart';
 
-class Settings extends StatelessWidget {
+class Settings extends StatefulWidget {
+  @override
+  _SettingsState createState() => _SettingsState();
+}
+
+class _SettingsState extends State<Settings> {
+  late final store;
+  late final firstNameController;
+  late final lastNameController;
+
+  @override
+  void initState() {
+    store = Provider.of<FormStore>(context, listen: false);
+    firstNameController = TextEditingController(text: store.firstName);
+    lastNameController = TextEditingController(text: store.lastName);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    firstNameController.dispose();
+    lastNameController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    final store = Provider.of<FormStore>(context);
-
-    final firstNameController = TextEditingController(text: store.firstName);
-    final lastNameController = TextEditingController(text: store.lastName);
-
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.all(16.0),
