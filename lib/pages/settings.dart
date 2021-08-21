@@ -50,15 +50,15 @@ class _SettingsState extends State<Settings> {
               onChanged: (value) => store.setLastName(value),
               decoration: InputDecoration(labelText: 'Last Name'),
             ),
-            TextButton(
-              child: Text('Save'),
-              onPressed: () {
-                // to prevent submitting the form with empty field
-                if (store.firstName.isEmpty) store.validateFirstName('');
-
-                if (store.error.hasErrors) return;
-                Navigator.pop(context);
-              },
+            Observer(
+              builder: (_) => TextButton(
+                child: Text('Save'),
+                onPressed: store.error.hasErrors
+                    ? null
+                    : () {
+                        Navigator.pop(context);
+                      },
+              ),
             ),
           ],
         ),

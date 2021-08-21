@@ -15,9 +15,7 @@ class MyApp extends StatelessWidget {
       create: (BuildContext context) => FormStore(),
       child: MaterialApp(
         title: 'Flutter Demo',
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+        theme: ThemeData(primarySwatch: Colors.blue),
         home: Welcome(),
       ),
     );

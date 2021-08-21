@@ -8,10 +8,10 @@ abstract class _FormStore with Store {
   final FormErrorState error = FormErrorState();
 
   @observable
-  String _firstName = '';
+  String _firstName = 'First';
 
   @observable
-  String _lastName = '';
+  String _lastName = 'Last';
 
   String get firstName => _firstName;
   String get lastName => _lastName;

@@ -24,7 +24,7 @@ class Welcome extends StatelessWidget {
               );
             },
           ),
-          SizedBox(width: 10)
+          SizedBox(width: 10),
         ],
       ),
       body: Padding(
@@ -41,7 +41,7 @@ class Welcome extends StatelessWidget {
             Observer(
               builder: (_) {
                 return Text(
-                  store.firstName.isEmpty ? 'First' : store.firstName,
+                  store.firstName,
                   style: GoogleFonts.lakkiReddy(
                     fontSize: 40.0,
                     textStyle: TextStyle(color: Colors.black),
@@ -52,7 +52,7 @@ class Welcome extends StatelessWidget {
             Observer(
               builder: (_) {
                 return Text(
-                  store.lastName.isEmpty ? 'Last' : store.lastName,
+                  store.lastName,
                   style: GoogleFonts.lakkiReddy(
                     fontSize: 40.0,
                     textStyle: TextStyle(color: Colors.black),
