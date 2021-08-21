@@ -64,17 +64,6 @@ mixin _$FormStore on _FormStore, Store {
   }
 
   @override
-  void validateFirstName(String value) {
-    final _$actionInfo = _$_FormStoreActionController.startAction(
-        name: '_FormStore.validateFirstName');
-    try {
-      return super.validateFirstName(value);
-    } finally {
-      _$_FormStoreActionController.endAction(_$actionInfo);
-    }
-  }
-
-  @override
   String toString() {
     return '''
 

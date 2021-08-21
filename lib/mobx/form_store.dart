@@ -19,17 +19,12 @@ abstract class _FormStore with Store {
   @action
   void setFirstName(String value) {
     _firstName = value;
-    validateFirstName(value);
+    error.firstName = _firstName.length < 3 ? 'Minimum 3 characters' : null;
   }
 
   @action
   void setLastName(String value) {
     _lastName = value;
-  }
-
-  @action
-  void validateFirstName(String value) {
-    error.firstName = _firstName.length < 3 ? 'Minimum 3 characters' : null;
   }
 }
 
